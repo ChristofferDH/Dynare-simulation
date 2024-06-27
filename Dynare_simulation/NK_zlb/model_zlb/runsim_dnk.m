@@ -2,26 +2,19 @@ clear
 close all
 set(0,'DefaultLineLineWidth',1.5)
 
-
-%---------------------------------------------------------------------
-% To compute multipliers at ZLB, solve two models
-% simulation 1 is baseline  that takes us at the ZLB
-% simulation 2 is baseline simulation that takes us at the ZLB plus G shock
-%---------------------------------------------------------------------
-
 nperiods=30;
 maxiter=20;
 
-% Pick color of charts
+
 solution=1;
 
 irfshock = char('eps_c','eps_g'); % Shocks we look at: preference and g-shock
 
-% simulation 1 is a simulation with a zero baseline
+% simulation 1 som baseline uden ændringer i c
 baseline1=[ 0     0      0       0        0       0
   0.00  0.00   0.00    0.00     0.00    0.0 ]';
 
-% In both models, there is a positive G shock in period 6
+% positivt stød til g i periode 6
 scenario1=[ 0     0      0       0        0       0
   0.00  0.00   0.00    0.00     0.00    0.01   ]';
 
@@ -79,7 +72,7 @@ for i=1:Mbase_.endo_nbr
 end
 
 
-% IRF i standardsituationen og ved rentens nedre gr�nse
+% IRF i standardsituationen og ved rentens nedre grænse
 
 titlelist = char('BNP','Offentligt forbrug','Nominel rente','Privat forbrug','Investering','Arbejdstimer');
 
@@ -89,7 +82,7 @@ figtitle = '';
 line1=100*[y1,a_g1,4*r1,c1,ik1,n1];
 line2=100*[y2,a_g2,4*r2,c2,ik2,n2];
 
-legendlist = cellstr(char('Standard','Rentens nedre gr�nse'));
+legendlist = cellstr(char('Standard','Rentens nedre grænse'));
 figlabel = '';
 makechart(titlelist,legendlist,figlabel,ylabels,line1,line2)
 
