@@ -8,7 +8,7 @@ maxiter=20;
 % Baseline simulation
 solution=1;
 
-irfshock = char('eps_c','eps_g'); % Shocks we look at: preference and g-shock
+irfshock = char('eps_c','eps_g');
 
 % simulation 1 som baseline uden ændringer i c
 baseline1=[ 0     0      0       0        0       0
