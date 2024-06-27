@@ -15,4 +15,4 @@ Den Ny-keynesianske model ved rentens nedre grænse er i mappen NK_zlb. For at k
 Det kræver Dynare 4.3.1 at køre simulationen.
 
 
-Simulationerne kan umiddelbart køres med andre versioner, men dette er ikke testet.
+Simulationerne kan umiddelbart køres med andre versioner af Dynare, men dette er ikke testet.
