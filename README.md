@@ -1,6 +1,6 @@
 # Dynare-simulation
 
-I denne mappe er koden til simulationerne, som jeg har brugt.
+I denne mappe er kodernen til simulationerne, som jeg har brugt til at fremstille figurer og resultater.
 
 **Standardmodellen**
 
