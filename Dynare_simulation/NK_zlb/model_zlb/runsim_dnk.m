@@ -5,7 +5,7 @@ set(0,'DefaultLineLineWidth',1.5)
 nperiods=30;
 maxiter=20;
 
-
+% Baseline simulation
 solution=1;
 
 irfshock = char('eps_c','eps_g'); % Shocks we look at: preference and g-shock
@@ -18,54 +18,53 @@ baseline1=[ 0     0      0       0        0       0
 scenario1=[ 0     0      0       0        0       0
   0.00  0.00   0.00    0.00     0.00    0.01   ]';
 
-
+% kald model for standardsituationen og ved rentens nedre grænse
 modnam = 'dnk';
 modnamstar = 'dnk_zlb';
 
+% betingelse for hvornår renten binder
 constraint = 'r<-(1/BETA-1)';
 constraint_relax ='rnot>-(1/BETA-1)';
 
-% First time we solve simulation only with baseline shocks
+% simulerer med baseline1
 [zdatabaseline_lin1 zdatabaseline_pie1 zdatass oobase_ Mbase_] = ...
   solve_one_constraint(modnam,modnamstar,...
   constraint, constraint_relax,...
   baseline1,irfshock,nperiods,maxiter);
 
-% Second time we solve simulation with baseline shocks and scenario
+% simulerer med baseline1 og scenario1
 [zdatascenario_lin1 zdatascenario_pie1 zdatass oobase_ Mbase_ ] = ...
   solve_one_constraint(modnam,modnamstar,...
   constraint, constraint_relax,...
   baseline1+scenario1,irfshock,nperiods,maxiter);
 
-
-% Pick color of charts
+% simulation ved rentens nedre grænse
 simulation=2;
 
-irfshock = char('eps_c','eps_g'); % Shocks we look at: preference and g-shock
+irfshock = char('eps_c','eps_g');
 
+% negativt stød til c
 baseline2=[   -0.04  -0.04   -0.04    -0.04      0   0
   0.00   0.00   0.00     0.00     0.0   0.0  ]';
 
-% In both simulations, there is a positive G shock in period 6
+% begge simulationer har samme stød til g i periode 6
 scenario2=scenario1;
 
 
-% First time we solve simulation only with baseline shocks
+% simulerer med baseline2
 [zdatabaseline_lin2 zdatabaseline_pie2 zdatass oobase_ Mbase_] = ...
   solve_one_constraint(modnam,modnamstar,...
   constraint, constraint_relax,...
   baseline2,irfshock,nperiods,maxiter);
 
-% Second time we solve simulation with baseline shocks and scenario
+% simulerer med baseline2 og scenario2
 [zdatascenario_lin2 zdatascenario_pie2 zdatass oobase_ Mbase_ ] = ...
   solve_one_constraint(modnam,modnamstar,...
   constraint, constraint_relax,...
   baseline2+scenario2,irfshock,nperiods,maxiter);
 
 
-% Note that we compute impulse responses in deviation from baseline
-% In simulation=1, baseline1 has a no negative preference shock
-% In simulation=2, baseline2 has a negative preference shock that takes economy to ZLB
+% impuls respons funktioner bliver udregnet som afvigelse fra baseline
 for i=1:Mbase_.endo_nbr
   eval([deblank(Mbase_.endo_names(i,:)),'1 = zdatascenario_pie1(:,i)-zdatabaseline_pie1(:,i);']);
   eval([deblank(Mbase_.endo_names(i,:)),'2 = zdatascenario_pie2(:,i)-zdatabaseline_pie2(:,i);']);
