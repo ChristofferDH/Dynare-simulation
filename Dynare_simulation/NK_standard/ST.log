@@ -1,0 +1,28 @@
+Starting Dynare (version 5.0).
+Calling Dynare with arguments: none
+Starting preprocessing of the model file ...
+Found 13 equation(s).
+Evaluating expressions...done
+Computing static model derivatives (order 1).
+Computing dynamic model derivatives (order 2).
+Processing outputs ...
+done
+Preprocessing completed.
+
+
+STEADY-STATE RESULTS:
+
+n      		 0
+c      		 0
+pi     		 0
+k      		 0
+b      		 0
+g      		 0
+y      		 0
+w      		 0
+i      		 0
+t      		 0
+r      		 0
+r_ann  		 0
+pi_ann 		 0
+Total computing time : 0h00m00s
