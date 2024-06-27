@@ -4,7 +4,7 @@ I denne mappe er koden til simulationerne, som jeg har brugt.
 
 **Standardmodellen**
 
-Standardmodellen fra kapitel 3 ligger i mappen NK_standard. For at køre simulationen skal man køre [run.m](NK_standard/run.m).
+Standardmodellen fra kapitel 3 ligger i mappen NK_standard. For at køre simulationen skal man køre [run.m](NK_standard/run).
 Det kræver Dynare 5.0 at køre simulationen.
 
 **Ved rentens nedre grænse**
