@@ -7,7 +7,7 @@ restoredefaultpath
 
 addpath C:\dynare\5.0\matlab
 
-% Kør model
+% KÃ¸r model
 
 dynare ST;
 
@@ -19,7 +19,7 @@ load('ST_results.mat');
 nul=zeros(30,1);
 t=1:1:30;
 
-% IRF til stød til offentligt forbrug
+% IRF til stÃ¸d til offentligt forbrug
 
 figure('name', 'Standard model','numbertitle','off')
 subplot(3,4,1);
@@ -55,7 +55,7 @@ title('Nominel rente');
 subplot(3,4,7);
 plot(t,w_e_g,'b','LineWidth',1.5);              hold on
 plot(t,nul,'r');
-title('Realløn');
+title('ReallÃ¸n');
 
 subplot(3,4,8);
 plot(t,pi_ann_e_g,'b','LineWidth',1.5);              hold on
@@ -75,4 +75,4 @@ title('Skat');
 subplot(3,4,11);
 plot(t,b_e_g,'b','LineWidth',1.5);              hold on
 plot(t,nul,'r');
-title('Offentligt budget');
+title('Statsobligationer');
